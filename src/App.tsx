@@ -14,7 +14,7 @@ import { FaDollarSign } from 'react-icons/fa';
 function App() {
   // Generate random cash balance between $10,000-$50,000
   const generateCashBalance = (): number => {
-    return Math.floor(Math.random() * 40000) + 10000 + Math.random();
+    return Math.floor(Math.random() * 4000) + 5000 + Math.random();
   };
 
   // Generate random savings balance between $0-$1000
@@ -195,15 +195,15 @@ function App() {
         {/* Bottom Navigation */}
         <div className="fixed bottom-0 left-0 right-0 bg-black border-t border-gray-800 px-6 py-4 max-w-md mx-auto">
           <div className="flex justify-around items-center">
-            <div className="flex flex-col items-center gap-1">
+            <div className="flex flex-col items-center gap-1 -ml-6">
               <div className="text-xl font-bold text-white">${cashDollars.toLocaleString()}</div>
             </div>
-            <div className="flex flex-col items-center gap-1">
+            <div className="flex flex-col items-center gap-1 -ml-4">
               <div className="w-7 h-5 border-4 border-white relative">
                 <div className="absolute top-0.5 left-0.5 w-1.5 h-1.5 bg-white rounded-full"></div>
               </div>
             </div>
-            <div className="flex flex-col items-center gap-1">
+            <div className="flex flex-col items-center gap-1 -ml-4">
               <FaDollarSign className="w-6 h-6 text-white transform rotate-12" />
             </div>
             <div className="flex flex-col items-center gap-1">
