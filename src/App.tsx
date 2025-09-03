@@ -2,12 +2,10 @@ import {
   User, 
   ChevronRight, 
   Check, 
-  Bitcoin,
   TrendingUp,
   Building,
   Search,
-  Clock,
-
+  Clock
 } from 'lucide-react';
 import { FaDollarSign } from 'react-icons/fa';
 
