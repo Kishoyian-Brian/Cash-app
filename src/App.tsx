@@ -2,19 +2,19 @@ import {
   User, 
   ChevronRight, 
   Check, 
-  DollarSign,
   Bitcoin,
   TrendingUp,
   Building,
   Search,
   Clock,
-  Home
+
 } from 'lucide-react';
+import { FaDollarSign } from 'react-icons/fa';
 
 function App() {
-  // Generate random cash balance between $100-$2000
+  // Generate random cash balance between $10,000-$50,000
   const generateCashBalance = (): number => {
-    return Math.floor(Math.random() * 1900) + 100 + Math.random();
+    return Math.floor(Math.random() * 40000) + 10000 + Math.random();
   };
 
   // Generate random savings balance between $0-$1000
@@ -78,13 +78,13 @@ function App() {
         </div>
 
         {/* Cash Balance Card */}
-        <div className="mx-6 mb-6">
-          <div className="bg-gray-900 rounded-3xl p-6 relative overflow-hidden">
+        <div className="mx-0 mb-6">
+          <div className="bg-[rgba(26,26,26)] rounded-3xl p-6 relative overflow-hidden">
             <div className="flex justify-between items-start mb-4">
               <div>
                 <h2 className="text-gray-400 text-lg mb-2">Cash balance</h2>
                 <div className="text-4xl font-bold mb-2">
-                  ${cashDollars.toLocaleString()}<span className="text-xl">.{cashCents.toString().padStart(2, '0')}</span>
+                  ${cashDollars.toLocaleString()}<span className="text-4xl">.{cashCents.toString().padStart(2, '0')}</span>
                 </div>
               </div>
               <ChevronRight className="w-6 h-6 text-gray-500" />
@@ -96,10 +96,10 @@ function App() {
             </div>
 
             <div className="flex gap-4 mb-6">
-              <button className="flex-1 bg-gray-800 hover:bg-gray-700 text-white py-3 px-4 rounded-2xl font-medium transition-colors">
+              <button className="flex-1 bg-[rgba(34,34,34)] hover:bg-[rgba(40,40,40)] text-white py-3 px-4 rounded-2xl font-medium transition-colors">
                 Add money
               </button>
-              <button className="flex-1 bg-gray-800 hover:bg-gray-700 text-white py-3 px-4 rounded-2xl font-medium transition-colors">
+              <button className="flex-1 bg-[rgba(34,34,34)] hover:bg-[rgba(40,40,40)] text-white py-3 px-4 rounded-2xl font-medium transition-colors">
                 Withdraw
               </button>
             </div>
@@ -116,22 +116,22 @@ function App() {
         </div>
 
         {/* Save & Invest Section */}
-        <div className="px-6 mb-6">
+        <div className="px-0 mb-6">
           <h2 className="text-2xl font-bold mb-4">Save & Invest</h2>
           
           {/* Savings Card */}
-          <div className="bg-gray-900 rounded-3xl p-6 mb-4 relative overflow-hidden">
+          <div className="bg-[rgba(26,26,26)] rounded-3xl p-6 mb-4 relative overflow-hidden">
             <div className="flex justify-between items-start">
               <div>
                 <h3 className="text-gray-400 text-lg mb-2">Savings</h3>
                 <div className="text-3xl font-bold mb-2">
-                  ${savingsDollars.toLocaleString()}<span className="text-xl">.{savingsCents.toString().padStart(2, '0')}</span>
+                  ${savingsDollars.toLocaleString()}<span className="text-3xl">.{savingsCents.toString().padStart(2, '0')}</span>
                 </div>
                 <p className="text-gray-400 text-sm">Up to 4% interest</p>
               </div>
               <div className="flex items-center gap-2">
-                <div className="w-12 h-12 bg-green-600 rounded-full flex items-center justify-center">
-                  <DollarSign className="w-6 h-6 text-white" />
+                <div className="w-16 h-16 flex items-center justify-center">
+                  <img src="/dollar.png" alt="Dollar" className="w-16 h-16" />
                 </div>
                 <ChevronRight className="w-6 h-6 text-gray-500" />
               </div>
@@ -139,12 +139,12 @@ function App() {
           </div>
 
           {/* Bitcoin Card */}
-          <div className="bg-gray-900 rounded-3xl p-6 relative overflow-hidden">
+          <div className="bg-[rgba(26,26,26)] rounded-3xl p-6 relative overflow-hidden">
             <div className="flex justify-between items-start">
               <div>
                 <h3 className="text-gray-400 text-lg mb-2">Bitcoin</h3>
                 <div className="text-3xl font-bold mb-2">
-                  ${bitcoinDollars.toLocaleString()}<span className="text-xl">.{bitcoinCents.toString().padStart(2, '0')}</span>
+                  ${bitcoinDollars.toLocaleString()}<span className="text-3xl">.{bitcoinCents.toString().padStart(2, '0')}</span>
                 </div>
                 <p className={`text-sm ${bitcoinChange >= 0 ? 'text-green-400' : 'text-red-400'}`}>
                   {bitcoinChange >= 0 ? '+' : ''}{bitcoinChange.toFixed(2)}% today
@@ -161,12 +161,12 @@ function App() {
         </div>
 
         {/* Explore Section */}
-        <div className="px-6 mb-8">
+        <div className="px-0 mb-8">
           <h2 className="text-2xl font-bold mb-4">Explore</h2>
           
           <div className="flex gap-4">
             {/* Stocks Card */}
-            <div className="flex-1 bg-gray-900 rounded-3xl p-6 relative overflow-hidden">
+            <div className="flex-1 bg-[rgba(26,26,26)] rounded-3xl p-6 relative overflow-hidden">
               <div className="flex justify-between items-start mb-4">
                 <h3 className="text-lg font-semibold">Stocks</h3>
                 <ChevronRight className="w-5 h-5 text-gray-500" />
@@ -177,7 +177,7 @@ function App() {
             </div>
 
             {/* Taxes Card */}
-            <div className="flex-1 bg-gray-900 rounded-3xl p-6 relative overflow-hidden">
+            <div className="flex-1 bg-[rgba(26,26,26)] rounded-3xl p-6 relative overflow-hidden">
               <div className="flex justify-between items-start mb-4">
                 <h3 className="text-lg font-semibold">Taxes</h3>
                 <ChevronRight className="w-5 h-5 text-gray-500" />
@@ -196,23 +196,24 @@ function App() {
         <div className="fixed bottom-0 left-0 right-0 bg-black border-t border-gray-800 px-6 py-4 max-w-md mx-auto">
           <div className="flex justify-around items-center">
             <div className="flex flex-col items-center gap-1">
-              <Home className="w-6 h-6 text-white" />
-              <span className="text-xs text-gray-400">Home</span>
+              <div className="text-xl font-bold text-white">${cashDollars.toLocaleString()}</div>
             </div>
             <div className="flex flex-col items-center gap-1">
-              <DollarSign className="w-6 h-6 text-gray-500" />
-              <span className="text-xs text-gray-400">Cash</span>
+              <div className="w-7 h-5 border-4 border-white relative">
+                <div className="absolute top-0.5 left-0.5 w-1.5 h-1.5 bg-white rounded-full"></div>
+              </div>
             </div>
             <div className="flex flex-col items-center gap-1">
-              <Search className="w-6 h-6 text-gray-500" />
-              <span className="text-xs text-gray-400">Search</span>
+              <FaDollarSign className="w-6 h-6 text-white transform rotate-12" />
+            </div>
+            <div className="flex flex-col items-center gap-1">
+              <Search className="w-6 h-6 text-white" />
             </div>
             <div className="flex flex-col items-center gap-1 relative">
-              <Clock className="w-6 h-6 text-gray-500" />
+              <Clock className="w-6 h-6 text-white" />
               <div className="absolute -top-2 -right-2 w-5 h-5 bg-red-500 rounded-full flex items-center justify-center">
                 <span className="text-xs text-white">3</span>
               </div>
-              <span className="text-xs text-gray-400">Activity</span>
             </div>
           </div>
           
