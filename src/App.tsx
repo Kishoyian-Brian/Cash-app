@@ -1,5 +1,4 @@
 import { 
-  User, 
   ChevronRight, 
   Check, 
   TrendingUp,
@@ -30,6 +29,14 @@ function App() {
     return (Math.random() - 0.5) * 10; // -5% to +5%
   };
 
+  // Generate random profile picture URL with faces
+  const generateProfilePicture = (): string => {
+    const seed = Math.floor(Math.random() * 1000);
+    const gender = seed % 2 === 0 ? 'men' : 'women';
+    const imageId = seed % 100;
+    return `https://randomuser.me/api/portraits/${gender}/${imageId}.jpg`;
+  };
+
 
 
   // Generate random account numbers
@@ -39,6 +46,11 @@ function App() {
 
   const generateRoutingNumber = (): string => {
     return '••' + Math.floor(Math.random() * 900 + 100).toString();
+  };
+
+  // Generate random notification count
+  const generateNotificationCount = (): number => {
+    return Math.floor(Math.random() * 10) + 1; // 1-10 notifications
   };
 
   // Generate all dynamic values
@@ -56,9 +68,11 @@ function App() {
 
   const bitcoinChange = generateBitcoinChange();
 
+  const profilePicture = generateProfilePicture();
 
   const accountNumber = generateAccountNumber();
   const routingNumber = generateRoutingNumber();
+  const notificationCount = generateNotificationCount();
 
   return (
     <div className="min-h-screen bg-black text-white">
@@ -70,8 +84,12 @@ function App() {
         {/* Header */}
         <div className="flex justify-between items-center px-6 py-6">
           <h1 className="text-3xl font-bold">Money</h1>
-          <div className="w-10 h-10 bg-red-500 rounded-full flex items-center justify-center">
-            <User className="w-6 h-6 text-white" />
+          <div className="w-10 h-10 rounded-full overflow-hidden">
+            <img 
+              src={profilePicture} 
+              alt="Profile" 
+              className="w-full h-full object-cover"
+            />
           </div>
         </div>
 
@@ -210,7 +228,7 @@ function App() {
             <div className="flex flex-col items-center gap-1 relative">
               <Clock className="w-6 h-6 text-white" />
               <div className="absolute -top-2 -right-2 w-5 h-5 bg-red-500 rounded-full flex items-center justify-center">
-                <span className="text-xs text-white">3</span>
+                <span className="text-xs text-white">{notificationCount}</span>
               </div>
             </div>
           </div>
