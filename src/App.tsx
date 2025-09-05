@@ -146,8 +146,11 @@ function App() {
                 <p className="text-gray-400 text-sm">Up to 4% interest</p>
               </div>
               <div className="flex items-center gap-2">
-                <div className="w-16 h-16 flex items-center justify-center">
-                  <img src="/dollar.png" alt="Dollar" className="w-16 h-16" />
+                <div className="w-16 h-16 flex items-center justify-center relative">
+                  <div className="w-12 h-12 flex items-center justify-center">
+                    <img src="/cash-2.png" alt="Cash" className="w-8 h-8 drop-shadow-[0_0_8px_rgba(34,197,94,0.6)]" />
+                    <div className="absolute inset-0 rounded-full border-2 border-green-400/30 animate-pulse"></div>
+                  </div>
                 </div>
                 <ChevronRight className="w-6 h-6 text-gray-500" />
               </div>
