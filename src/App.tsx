@@ -170,8 +170,8 @@ function App() {
                 </p>
               </div>
               <div className="flex items-center gap-2">
-                <div className="w-8 h-8 flex items-center justify-center">
-                  <img src="/bitcoin.png" alt="Bitcoin" className="w-8 h-8" />
+                <div className="w-12 h-12 flex items-center justify-center">
+                  <img src="/bitcoin.png" alt="Bitcoin" className="w-12 h-12" />
                 </div>
                 <ChevronRight className="w-6 h-6 text-gray-500" />
               </div>
