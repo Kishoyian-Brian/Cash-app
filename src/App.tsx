@@ -53,6 +53,15 @@ function App() {
     return Math.floor(Math.random() * 10) + 1; // 1-10 notifications
   };
 
+  // Generate random bottom navigation amount (1k to 20k)
+  const generateBottomNavAmount = (): string => {
+    const amount = Math.random() * 19000 + 1000; // 1000 to 20000
+    if (amount >= 1000) {
+      return (amount / 1000).toFixed(1) + 'k';
+    }
+    return amount.toString();
+  };
+
   // Generate all dynamic values
   const cashBalance = generateCashBalance();
   const cashDollars = Math.floor(cashBalance);
@@ -73,6 +82,7 @@ function App() {
   const accountNumber = generateAccountNumber();
   const routingNumber = generateRoutingNumber();
   const notificationCount = generateNotificationCount();
+  const bottomNavAmount = generateBottomNavAmount();
 
   return (
     <div className="min-h-screen bg-black text-white">
@@ -215,7 +225,7 @@ function App() {
         <div className="fixed bottom-0 left-0 right-0 bg-black border-t border-gray-800 px-6 py-4 max-w-md mx-auto">
           <div className="flex justify-around items-center">
             <div className="flex flex-col items-center gap-1 -ml-6">
-              <div className="text-xl font-bold text-white">${cashDollars.toLocaleString()}</div>
+              <div className="text-xl font-bold text-white">${bottomNavAmount}</div>
             </div>
             <div className="flex flex-col items-center gap-1 -ml-4">
               <div className="w-7 h-5 border-4 border-white relative">
