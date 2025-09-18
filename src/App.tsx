@@ -246,8 +246,6 @@ function App() {
             </div>
           </div>
           
-          {/* Home indicator */}
-          <div className="w-32 h-1 bg-white/30 rounded-full mx-auto mt-4"></div>
         </div>
       </div>
     </div>
