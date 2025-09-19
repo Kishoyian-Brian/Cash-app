@@ -53,9 +53,8 @@ function App() {
     return Math.floor(Math.random() * 10) + 1; // 1-10 notifications
   };
 
-  // Generate random bottom navigation amount (1k to 20k)
-  const generateBottomNavAmount = (): string => {
-    const amount = Math.random() * 19000 + 1000; // 1000 to 20000
+  // Format cash balance for bottom navigation (e.g., 12453 → 12.4k)
+  const formatBottomNavAmount = (amount: number): string => {
     if (amount >= 1000) {
       return (amount / 1000).toFixed(1) + 'k';
     }
@@ -82,7 +81,7 @@ function App() {
   const accountNumber = generateAccountNumber();
   const routingNumber = generateRoutingNumber();
   const notificationCount = generateNotificationCount();
-  const bottomNavAmount = generateBottomNavAmount();
+  const bottomNavAmount = formatBottomNavAmount(cashDollars);
 
   return (
     <div className="min-h-screen bg-black text-white">
